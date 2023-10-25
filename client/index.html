@@ -36,7 +36,7 @@
         socket.on('chat message', (msg, lastIdMessage, username) => {
             const item = `<li class="${username === localStorage.getItem('username') ? 'own-message' : ''}" id=${lastIdMessage}>
                 <p class="username ${username === localStorage.getItem('username') ? 'own' : 'not-own'}">${username == localStorage.getItem('username') ? 'Tu' : username}</p>
-                ${msg}
+                <div class="content">${msg}</div>
             </li>`;
             messages.insertAdjacentHTML('beforeend', item);
             messages.scrollTop = messages.scrollHeight;
@@ -74,8 +74,7 @@
         }
 
         p {
-            color: #444;
-            line-height: 1.6;
+            color: #000;
         }
 
         #main {
@@ -104,6 +103,7 @@
             gap: 1rem;
             padding: .5rem 1rem;
             height: 100%;
+            width: 350px;
             overflow-y: scroll;
             scroll-behavior: smooth;
             list-style: none;
@@ -123,6 +123,13 @@
             border-radius: 10px;
             padding: .5rem 1rem;
             align-self: flex-start;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            word-break: break-all;
+            max-width: 260px;
         }
 
         .username {
