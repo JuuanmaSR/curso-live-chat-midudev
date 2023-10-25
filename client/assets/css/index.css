@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+  
+h1{
+    color: #333;
+}
+  
+h2{
+    color: #666;
+}
+  
+p{
+    color: #444;
+    line-height: 1.6;
+}
+
+#chat-app{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    height: 100vh;
+    width: 100%;
+}
